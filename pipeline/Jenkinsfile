@@ -73,7 +73,7 @@ node {
                 }
 
                 stage('deploy') {
-                    def dc = openshift.selector('dc', "${templateName}")
+                    def dc = openshift.selector('deployment', "${templateName}")
                     dc.rollout().status()
                 }
 
